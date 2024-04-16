@@ -4,6 +4,14 @@
 
     <div class="row">
         <span class="price-label">Price : </span>
-        <span class="price">{{product.price | currency:'EUR':true}}</span>
+        <span class="price">{{product.price }}</span>
+    </div>
+    <p-rating [(ngModel)]="product.rating" [readonly]="true"  iconCancelClass="hidden"></p-rating>
+
+    <div class="row gap-05">
+        <button pButton icon="pi pi-pencil" type="button" label="Edit" (click)="editProduct()"></button>
+        <button pButton class="p-button-danger" icon="pi pi-trash" type="button" label="Delete" (click)="confirmDelete()" #deleteButton></button>
     </div>
 </div>
+
+<p-confirmPopup></p-confirmPopup>

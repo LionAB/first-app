@@ -7,6 +7,13 @@ const routes: Routes = [
     path: '', 
     component: HomeComponent
   },
+  {
+    path: 'about',
+    loadChildren: () => import('./modules/about/about.module')
+    .then(m => m.AboutModule)
+  },
+  
+  
 ];
 
 @NgModule({
